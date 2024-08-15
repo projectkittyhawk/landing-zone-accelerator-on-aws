@@ -29,7 +29,7 @@
     "@types/js-yaml": "4.0.5",
     "@types/semver": "7.3.13",
     "aws-cdk": "2.45.0",
-    "aws-cdk-lib": "2.45.0",
+    "aws-cdk-lib": "2.80.0",
     "aws-lambda": "1.0.7",
     "change-case": "4.1.2",
     "fp-ts": "2.13.1",
@@ -41,7 +41,7 @@
     "monocle-ts": "2.3.13",
     "newtype-ts": "0.3.5",
     "pascal-case": "3.1.2",
-    "semver": "7.3.8",
+    "semver": "7.5.2",
     "tempy": "3.0.0",
     "winston": "3.8.2"
   },
