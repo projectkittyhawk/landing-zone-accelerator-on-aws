@@ -1,0 +1,32 @@
+name: Enforce Commit Message Format
+
+on: [push]
+
+jobs:
+  commit-message-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get latest commits
+        run: |
+          git fetch origin '+${{ github.ref }}:${{ github.ref }}'
+          git log ${{ github.ref }} --pretty=format:"%H %s" > commits.txt
+
+      - name: Check commit messages
+        run: |
+          regex="^(PT|PS|PBP1)[ -]?[0-9]+"
+          failed=0
+          while read -r line; do
+            commit_hash=$(echo "$line" | cut -d' ' -f1)
+            commit_message=$(echo "$line" | cut -d' ' -f2-)
+            if ! [[ "$commit_message" =~ $regex ]]; then
+              echo "::error::Commit $commit_hash has an invalid commit message."
+              echo "Commit message: $commit_message"
+              failed=1
+            else
+              echo "Commit $commit_hash message is valid."
+            fi
+          done < commits.txt
+          exit $failed
