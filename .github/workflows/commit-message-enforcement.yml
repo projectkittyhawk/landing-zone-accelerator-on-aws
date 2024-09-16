@@ -1,0 +1,28 @@
+name: Enforce Commit Message Format
+
+on: [push]
+
+jobs:
+  commit-message-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check commit messages
+        run: |
+          regex="^(PT|PS|PBP1)[ -]?[0-9]+"
+          failed=0
+          for commit in $(echo '${{ toJson(github.event.commits) }}' | jq -rc '.[] | @base64'); do
+            _jq() {
+              echo ${commit} | base64 --decode | jq -r ${1}
+            }
+            commit_hash=$(_jq '.id')
+            commit_message=$(_jq '.message')
+            if ! [[ "$commit_message" =~ $regex ]]; then
+              echo "::error::Commit message does not start with a Jira Issue ID."
+              echo "Commit message: $commit_message"
+              failed=1
+            else
+              echo "Commit $commit_hash message is valid."
+            fi
+          done
+          exit $failed
+        shell: bash
