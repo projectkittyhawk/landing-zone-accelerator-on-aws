@@ -41,7 +41,7 @@ centralSecurityServices:
     enable: false
     excludeRegions: []
   securityHub:
-    enable: true
+    enable: false
     regionAggregation: true
     excludeRegions: []
     standards:
@@ -54,7 +54,7 @@ centralSecurityServices:
           - Lambda.4
       - name: PCI DSS v3.2.1
         # https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-pci-controls.html
-        enable: true
+        enable: false
         controlsToDisable:
           - PCI.IAM.3
           - PCI.S3.3
