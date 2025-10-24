@@ -23,12 +23,12 @@
     "precommit": "eslint --max-warnings 0 -c ../../../.eslintrc.json 'lib/**/*.{ts,tsx}'"
   },
   "dependencies": {
-    "aws-cdk-lib": "2.80.0",
+    "aws-cdk-lib": "2.189.1",
     "aws-cdk": "2.45.0",
     "@aws-sdk/client-config-service": "3.272.0",
     "@types/aws-lambda": "8.10.110",
     "@types/js-yaml": "4.0.5",
-    "@types/semver": "7.3.13",
+    "@types/semver": "7.7.1",
     "aws-lambda": "1.0.7",
     "change-case": "4.1.2",
     "fs-extra": "11.1.0",
@@ -37,12 +37,12 @@
     "io-ts-types": "0.5.19",
     "js-yaml": "4.1.0",
     "pascal-case": "3.1.2",
-    "semver": "7.5.2",
+    "semver": "7.7.3",
     "tempy": "3.0.0",
     "winston": "3.8.2"
   },
   "devDependencies": {
-    "aws-cdk-lib": "2.45.0",
+    "aws-cdk-lib": "2.189.1",
     "aws-cdk": "2.45.0",
     "@aws-cdk/cx-api": "2.45.0",
     "@aws-cdk/region-info": "2.45.0",
