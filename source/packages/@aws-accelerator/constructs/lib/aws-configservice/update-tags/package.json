@@ -23,7 +23,7 @@
     "@types/jest": "29.4.0",
     "@types/node": "18.14.0",
     "@aws-sdk/types": "3.272.0",
-    "esbuild": "0.17.10",
+    "esbuild": "0.25.0",
     "eslint": "8.34.0",
     "eslint-config-prettier": "8.6.0",
     "eslint-config-standard": "17.0.0",
